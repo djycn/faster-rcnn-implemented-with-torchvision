@@ -1,5 +1,5 @@
 
-# *Faster* R-CNN: implemented with torchvision
+# *Faster* R-CNN: re-implemented with torchvision
 
 commands:
  - --backbone_name -> the backbone you want to use, support vgg16, resnet34, resnet50
