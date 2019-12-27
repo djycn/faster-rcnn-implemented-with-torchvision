@@ -175,7 +175,7 @@ def main():
                 
         end_time = time.time()
         epoch_time = end_time - start_time
-        print('epoch{} took {}s'.format(i, epoch_time))
+        print('epoch{} took {}s\n'.format(i, epoch_time))
         # TODO save the model
 
 
