@@ -6,7 +6,9 @@ arguments:
  - --backbone_path -> backbone weights' path 
  - --data_path -> data path to load training data
 
-examples:  train: python train.py --backbone_name=resnet50 --backbone_path=models/resnet50-19c8e357.pth --data_path=data/custom
+examples:  
+
+	   train: python train.py --backbone_name=resnet50 --backbone_path=models/resnet50-19c8e357.pth --data_path=data/custom
 
 	   	  python train.py --backbone_name=resnet34 --backbone_path=models/resnet34-333f7ec4.pth --data_path=data/custom
 
@@ -20,10 +22,9 @@ examples:  train: python train.py --backbone_name=resnet50 --backbone_path=model
 
 ### data formats
 
-All images for training and evaluating should be stored in .jpg format and in folder images/. Iits labels should be in the form of 'class_index x1 y1 x2 y2' for all bounding boxes, and the class index shall start from 1.
+All images for training and evaluating should be stored in `.jpg` format and in folder `images/`. Iits labels should be in the form of `class_index x1 y1 x2 y2` (x ranging from 0 to W, y ranging from 0 to H)for all bounding boxes, and the `class index` shall start from 1.
 
-All classes' names shall be stored in classes.names one line for each class name with background as the default class name. The training images' directory shall be stored in train.txt like 0001.jpg, and the validating images
-shall be stored in valid.txt resembly.
+All classes' names shall be stored in `classes.names` one line for each class name with `background` as the default class name. The training images' directory shall be stored in `train.txt` like `0001.jpg`, and the validating images shall be stored in `valid.txt` resembly.
 	    
 
 ### License
