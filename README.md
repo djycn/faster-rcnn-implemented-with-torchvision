@@ -1,14 +1,17 @@
 
 # *Faster* R-CNN: implemented with torchvision
 
-commands:
+arguments:
  - --backbone_name -> the backbone you want to use, support vgg16, resnet34, resnet50
  - --backbone_path -> backbone weights' path 
  - --data_path -> data path to load training data
 examples:  train: python train.py --backbone_name=resnet50 --backbone_path=models/resnet50-19c8e357.pth --data_path=data/custom
 	   	  python train.py --backbone_name=resnet34 --backbone_path=models/resnet34-333f7ec4.pth --data_path=data/custom
 		  python train.py --backbone_name=vgg16 --backbone_path=models/vgg16-397923af.pth --data_path=data/custom
+		  python train.py --backbone_name=resnet50 --backbone_path=models/resnet50-19c8e357.pth --resume=checkpoints/resnet50/faster_rcnn_model_2.pth
+                  
 	   detect: python detect.py
+		   python detect.py --resume_model=checkpoints/resnet50/faster_rcnn_model_2.pth
 ### data formats
 
 all images for training should be stored in .jpg format and in folder images/, all labels should be in the form of class_index x1 y1 x2 y2 for all bounding boxes, and the class index shall start from 1
