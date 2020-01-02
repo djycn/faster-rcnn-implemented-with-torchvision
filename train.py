@@ -65,7 +65,7 @@ def train(model, dataloader, optimizer, lr_scheduler, epoch, device):
     # pdb.set_trace()
     loss = 0
     for bi, (images, targets) in enumerate(tqdm.tqdm(dataloader,
-                                                     desc="running epoch; {}".format(epoch), total=len(dataloader))):
+                                                     desc="running epoch -- {}".format(epoch), total=len(dataloader))):
         # print(images)
         # print(targets)
         images = list(image.to(device) for image in images)
