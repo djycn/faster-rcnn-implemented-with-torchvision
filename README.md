@@ -22,7 +22,7 @@
 
 ### data formats
 
-In the `$data_path_dir`, all images for training and evaluating should be stored in `.jpg` format and in folder `images/`. Iits labels should be in the form of `class_index x1 y1 x2 y2` (x ranging from 0 to W, y ranging from 0 to H)for all bounding boxes, and the `class index` shall start from 1.
+In the `$data_path_dir`, all images for training and evaluating should be stored in `.jpg` format and in folder `images/`. Iits labels should be in the form of `class_index x1 y1 w, h` (x1, y1, w, h all range from 0 to 1, where x1 and y1 stand for the centroid coordinates for the bbox while w and h stand for the width and height.)for all bounding boxes, and the `class index` shall start from 1.
 
 All classes' names shall be stored in `classes.names` one line for each class name with `background` as the default class name. The training images' directory shall be stored in `train.txt` like `0001.jpg`, and the validating images shall be stored in `valid.txt` resembly.
 	    
