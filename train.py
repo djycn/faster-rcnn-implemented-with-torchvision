@@ -149,7 +149,7 @@ def main():
         
     for i in range(args.epochs):
         start_time = time.time()
-        # train(faster_rcnn, trainloader, optimizer, lr_scheduler, i, device)
+        train(faster_rcnn, trainloader, optimizer, lr_scheduler, i, device)
         # inputs = []
         # for j in range(1, 10):
         #     src_img = Image.open('/home/zhouge/PycharmProjects/Faster-rcnn/data/custom/images/drone_0000000{}.jpg'.format(j))
