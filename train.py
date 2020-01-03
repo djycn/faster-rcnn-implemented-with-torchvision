@@ -65,7 +65,7 @@ def train(model, dataloader, optimizer, lr_scheduler, epoch, device):
     # pdb.set_trace()
     loss = 0
     for bi, (images, targets) in enumerate(tqdm.tqdm(dataloader,
-                                                     desc="running epoch -- {}".format(epoch), total=len(dataloader))):
+                                                     desc="running epoch; {}".format(epoch), total=len(dataloader))):
         # print(images)
         # print(targets)
         images = list(image.to(device) for image in images)
@@ -149,7 +149,7 @@ def main():
         
     for i in range(args.epochs):
         start_time = time.time()
-        train(faster_rcnn, trainloader, optimizer, lr_scheduler, i, device)
+        # train(faster_rcnn, trainloader, optimizer, lr_scheduler, i, device)
         # inputs = []
         # for j in range(1, 10):
         #     src_img = Image.open('/home/zhouge/PycharmProjects/Faster-rcnn/data/custom/images/drone_0000000{}.jpg'.format(j))
@@ -163,6 +163,8 @@ def main():
         if i % args.eval_interval == 0:
             evaluate(faster_rcnn, testloader, args.iou_thres, classes, device)
             if args.output_dir:
+                if not os.path.exists(args.output_dir):
+                    os.mkdir(args.output_dir)
                 save_path = os.path.join(args.output_dir, args.backbone_name)
                 if not os.path.exists(save_path):
                     os.mkdir(save_path)
