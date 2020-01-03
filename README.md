@@ -1,6 +1,8 @@
 
 # *Faster* R-CNN: implemented with torchvision
-
+### requirements:
+ - pytorch >= 1.0.0
+ - opencv >=4.0.0
 ### arguments:
  - --backbone_name -> the backbone you want to use, support `vgg16`, `resnet34`, `resnet50`.
  - --backbone_path -> backbone weights' path. 
